@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import {FilterValuesType} from "./App"
 
 export type TaskType = {
@@ -22,7 +22,7 @@ export function TodoList(props: PropsType) {
       setNewTaskTitle(e.currentTarget.value)
     };
 
-    const onKeyDownChangeHandler = (e: string) => {
+    const onKeyDownChangeHandler = (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
     props.addTask(newTaskTitle);
     setNewTaskTitle("")}}
