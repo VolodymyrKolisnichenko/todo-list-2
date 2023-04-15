@@ -26,6 +26,9 @@ function App() {
     let filteredTasks = tasks.filter((t) => t.id !== id);
     setTasks(filteredTasks);
   }
+  function addTask() {
+    
+  }
 
   let taskForTodoList = tasks;
   if (filtered === "completed") {
@@ -41,7 +44,8 @@ function App() {
       title="What to learn" 
       tasks={taskForTodoList} 
       removeTask={removeTask}
-      changeFilter={changeFilter} />
+      changeFilter={changeFilter}
+      addTask={addTask} />
     </div>
   );
 }
