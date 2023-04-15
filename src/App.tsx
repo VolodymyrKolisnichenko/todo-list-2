@@ -17,7 +17,7 @@ function App() {
   ]);
   let [filtered, setFilter] = useState<FilterValuesType>("all");
 
-  console.log(tasks)
+ 
   function changeFilter (value: FilterValuesType) {
     setFilter(value)
   }
