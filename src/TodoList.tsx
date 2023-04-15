@@ -25,8 +25,13 @@ export function TodoList(props: PropsType) {
     const onKeyDownChangeHandler = (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
     props.addTask(newTaskTitle);
-    setNewTaskTitle("")}}
+    setNewTaskTitle("")}};
 
+    const addTask = () => {
+      props.addTask(newTaskTitle) 
+      setNewTaskTitle("")};
+
+    const onAllClickHandler = () => props.changeFilter('all')
 
     return <div>
       <h3>{props.title}</h3>
@@ -35,9 +40,7 @@ export function TodoList(props: PropsType) {
         value={newTaskTitle} 
         onChange={onNewTitleChangeHandler}
         onKeyDown={onKeyDownChangeHandler}/>
-        <button onClick={() => {
-          props.addTask(newTaskTitle) 
-          setNewTaskTitle("")}}>+</button>
+        <button onClick={addTask}>+</button>
       </div>
       <ul>{
         props.tasks.map(el => {
@@ -50,7 +53,7 @@ export function TodoList(props: PropsType) {
       </ul>
    
       <div>
-      <button onClick={() => {props.changeFilter('all')}}>All</button>
+      <button onClick={onAllClickHandler}>All</button>
       <button onClick={() => {props.changeFilter('active')}}>Active</button>
       <button onClick={() => {props.changeFilter('completed')}}>Completed</button>
       </div>
