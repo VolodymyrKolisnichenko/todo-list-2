@@ -22,9 +22,13 @@ export function TodoList(props: PropsType) {
     return <div>
       <h3>{props.title}</h3>
       <div>
-        <input value={newTaskTitle} onChange={(e) => {
-          setNewTaskTitle(e.currentTarget.value)
-          }}/>
+        <input 
+        value={newTaskTitle} 
+        onChange={(e) => {setNewTaskTitle(e.currentTarget.value)}}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+        props.addTask(newTaskTitle);
+        setNewTaskTitle("")}}}/>
         <button onClick={() => {
           props.addTask(newTaskTitle) 
           setNewTaskTitle("")}}>+</button>
