@@ -32,7 +32,7 @@ export function TodoList(props: PropsType) {
       if (title.trim() === ""){
         return;
       }
-      props.addTask(title) 
+      props.addTask(title.trim()) 
       setNewTaskTitle("")};
 
     const onAllClickHandler = () => props.changeFilter('all');
