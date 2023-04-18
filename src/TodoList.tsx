@@ -45,8 +45,10 @@ export function TodoList(props: PropsType) {
         <input 
         value={title} 
         onChange={onNewTitleChangeHandler}
-        onKeyDown={onKeyDownChangeHandler}/>
+        onKeyDown={onKeyDownChangeHandler}
+        className="error"/>
         <button onClick={addTask}>+</button>
+        <div className="error-message">Field is required</div>
       </div>
       <ul>{
         props.tasks.map(el => {
