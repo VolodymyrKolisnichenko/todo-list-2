@@ -52,7 +52,7 @@ export function TodoList(props: PropsType) {
 
             return <li key={el.id}><input
             type="checkbox" 
-            checked={props.changeStatus(el.isDone)} />
+            checked={props.changeStatus(el.id)} />
             <span>{el.title}</span>
             <button onClick={onRemoveHandler}>X</button></li>
             })}
