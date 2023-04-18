@@ -31,9 +31,13 @@ function App() {
     let newTasks = [newTask, ...tasks];
     setTasks(newTasks)
   }
-  function changeStatus(status) {
-    const changeStatusTasks = tasks.map(e => e.isDone === status? e.isDone = !e.isDone: null);
-    setTasks(changeStatusTasks)
+  function changeStatus(taskId: string, isDone: boolean) {
+    // const task = tasks.map(e => e.id === taskId? e.isDone = !e.isDone: null);
+    let task = tasks.find(t => t.id === taskId);
+    if (task) {
+      task.isDone = isDone
+    } 
+    setTasks(tasks)
   }
 
   let taskForTodoList = tasks;
@@ -52,7 +56,7 @@ function App() {
       removeTask={removeTask}
       changeFilter={changeFilter}
       addTask={addTask}
-      changeStatus={changeStatus} />
+      changeTaskStatus={changeStatus} />
     </div>
   );
 }
