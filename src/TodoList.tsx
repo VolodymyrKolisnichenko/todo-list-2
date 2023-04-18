@@ -35,6 +35,7 @@ export function TodoList(props: PropsType) {
     const onAllClickHandler = () => props.changeFilter('all');
     const onActiveClickHandler = () => props.changeFilter('active');
     const onCompletedClickHandler = () => props.changeFilter('completed');
+    const onChangeHandler = () => props.changeStatus();
 
     return <div>
       <h3>{props.title}</h3>
@@ -51,8 +52,9 @@ export function TodoList(props: PropsType) {
           const onRemoveHandler = () => {props.removeTask(el.id)};
 
             return <li key={el.id}><input
-            type="checkbox" 
-            checked={props.changeStatus(el.id)} />
+            type="checkbox"
+            onChange={onChangeHandler}
+            checked={el.isDone} />
             <span>{el.title}</span>
             <button onClick={onRemoveHandler}>X</button></li>
             })}
