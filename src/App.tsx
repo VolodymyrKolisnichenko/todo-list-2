@@ -31,8 +31,8 @@ function App() {
     let newTasks = [newTask, ...tasks];
     setTasks(newTasks)
   }
-  function changeStatus() {
-    const changeStatusTasks = tasks.map(e => e.isDone === false? e.isDone = true: false);
+  function changeStatus(status) {
+    const changeStatusTasks = tasks.map(e => e.isDone === status? e.isDone = !e.isDone: null);
     setTasks(changeStatusTasks)
   }
 
