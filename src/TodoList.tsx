@@ -17,7 +17,7 @@ type PropsType = {
 }
 
 export function TodoList(props: PropsType) {
-    let [newTaskTitle, setNewTaskTitle] = useState("")
+    let [title, setNewTaskTitle] = useState("")
 
     const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
       setNewTaskTitle(e.currentTarget.value)
@@ -25,11 +25,14 @@ export function TodoList(props: PropsType) {
 
     const onKeyDownChangeHandler = (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
-    props.addTask(newTaskTitle);
+    props.addTask(title);
     setNewTaskTitle("")}};
 
     const addTask = () => {
-      props.addTask(newTaskTitle) 
+      if (title === ""){
+        return;
+      }
+      props.addTask(title) 
       setNewTaskTitle("")};
 
     const onAllClickHandler = () => props.changeFilter('all');
@@ -40,7 +43,7 @@ export function TodoList(props: PropsType) {
       <h3>{props.title}</h3>
       <div>
         <input 
-        value={newTaskTitle} 
+        value={title} 
         onChange={onNewTitleChangeHandler}
         onKeyDown={onKeyDownChangeHandler}/>
         <button onClick={addTask}>+</button>
