@@ -18,7 +18,7 @@ function App() {
     { id: v1(), title: "React", isDone: false },
     { id: v1(), title: "Redux", isDone: false },
   ]);
-  let [filtered, setFilter] = useState<FilterValuesType>("all");
+  let [filter, setFilter] = useState<FilterValuesType>("all");
 
   function changeFilter(value: FilterValuesType) {
     setFilter(value);
@@ -52,10 +52,10 @@ function App() {
     <div className="App">
       {todoList.map((tl) => {
         let taskForTodoList = tasks;
-        if (filtered === "completed") {
+        if (filter === "completed") {
           taskForTodoList = tasks.filter((el) => el.isDone === true);
         }
-        if (filtered === "active") {
+        if (filter === "active") {
           taskForTodoList = tasks.filter((el) => el.isDone === false);
         }
 
