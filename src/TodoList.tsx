@@ -17,26 +17,25 @@ type PropsType = {
 };
 
 export function TodoList(props: PropsType) {
-  let [title, setNewTaskTitle] = useState("");
+  let [title, setTitle] = useState("");
   let [error, setError] = useState("");
 
   const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setNewTaskTitle(e.currentTarget.value);
+    setTitle(e.currentTarget.value);
   };
 
   const onKeyDownChangeHandler = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       props.addTask(title);
-      setNewTaskTitle("");
+      setTitle("");
     }
   };
 
   const addTask = () => {
-    if (title.trim() === "") {
-      return;
+    if (title.trim() !== "") {
+      props.addTask(title.trim());
+      setTitle("");
     }
-    props.addTask(title.trim());
-    setNewTaskTitle("");
   };
 
   const onAllClickHandler = () => props.changeFilter("all");
