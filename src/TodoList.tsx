@@ -42,9 +42,9 @@ export function TodoList(props: PropsType) {
     }
   };
 
-  const onAllClickHandler = () => props.changeFilter("all", );
-  const onActiveClickHandler = () => props.changeFilter("active");
-  const onCompletedClickHandler = () => props.changeFilter("completed");
+  const onAllClickHandler = () => props.changeFilter("all", props.id);
+  const onActiveClickHandler = () => props.changeFilter("active", props.id);
+  const onCompletedClickHandler = () => props.changeFilter("completed", props.id);
 
   return (
     <div>
