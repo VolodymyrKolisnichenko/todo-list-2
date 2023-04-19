@@ -18,7 +18,7 @@ type PropsType = {
 
 export function TodoList(props: PropsType) {
   let [title, setTitle] = useState("");
-  let [error, setError] = useState("");
+  let [error, setError] = useState<string | null>(null);
 
   const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value);
@@ -35,6 +35,8 @@ export function TodoList(props: PropsType) {
     if (title.trim() !== "") {
       props.addTask(title.trim());
       setTitle("");
+    } else {
+      setError("Title is required")
     }
   };
 
