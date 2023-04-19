@@ -61,6 +61,7 @@ function App() {
 
         return (
           <TodoList
+            key={tl.id}
             title={tl.title}
             tasks={taskForTodoList}
             removeTask={removeTask}
@@ -68,6 +69,7 @@ function App() {
             addTask={addTask}
             changeTaskStatus={changeStatus}
             filtered={tl.filter}
+            id={tl.id}
           />
         );
       })}
