@@ -4,6 +4,9 @@ import { TodoList, TaskType } from "./TodoList";
 import { v1 } from "uuid";
 
 export type FilterValuesType = "all" | "completed" | "active";
+type TodoListType = {
+  id: string, title: string, filter: FilterValuesType
+}
 
 
 function App() {
@@ -48,6 +51,13 @@ function App() {
   if (filtered === "active") {
     taskForTodoList = tasks.filter(el => el.isDone === false)
   }
+
+
+  let todoList: Array<TodoListType> = [
+    { id: v1(), title: "What to buy", filter: "active" },
+    { id: v1(), title: "What to learn", filter: "completed" },
+  ]
+
 
   return (
     <div className="App">
