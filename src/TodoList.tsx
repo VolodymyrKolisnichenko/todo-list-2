@@ -25,9 +25,9 @@ export function TodoList(props: PropsType) {
   };
 
   const onKeyDownChangeHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+    setError(null)
     if (e.key === "Enter") {
-      props.addTask(title);
-      setTitle("");
+      addTask();
     }
   };
 
