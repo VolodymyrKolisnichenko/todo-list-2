@@ -27,8 +27,8 @@ function App() {
     setTasks(filteredTasks);
   }
   function addTask(title: string) {
-    let newTask = {id: v1(), title: title, isDone: false};
-    let newTasks = [newTask, ...tasks];
+    let task = {id: v1(), title: title, isDone: false};
+    let newTasks = [task, ...tasks];
     setTasks(newTasks)
   }
   function changeStatus(taskId: string, isDone: boolean) {
