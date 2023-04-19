@@ -82,8 +82,8 @@ export function TodoList(props: PropsType) {
 
       <div>
         <button className={props.filtered === "all"? "active-filter": ""} onClick={onAllClickHandler}>All</button>
-        <button onClick={onActiveClickHandler}>Active</button>
-        <button onClick={onCompletedClickHandler}>Completed</button>
+        <button className={props.filtered === "active"? "active-filter": ""} onClick={onActiveClickHandler}>Active</button>
+        <button className={props.filtered === "completed"? "active-filter": ""} onClick={onCompletedClickHandler}>Completed</button>
       </div>
     </div>
   );
