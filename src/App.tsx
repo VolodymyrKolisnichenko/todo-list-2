@@ -42,7 +42,7 @@ function App() {
     setTasks([...tasks]);
   }
 
-  let [todoList, setTodoList] = useState([
+  let [todoList, setTodoList] = useState<Array<TodoListType>>([
     { id: v1(), title: "What to buy", filter: "active" },
     { id: v1(), title: "What to learn", filter: "completed" },
   ]);
