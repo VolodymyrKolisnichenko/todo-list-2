@@ -18,10 +18,10 @@ function App() {
     { id: v1(), title: "React", isDone: false },
     { id: v1(), title: "Redux", isDone: false },
   ]);
-  let [filter, setFilter] = useState<FilterValuesType>("all");
+  // let [filter, setFilter] = useState<FilterValuesType>("all");
 
-  function changeFilter(value: FilterValuesType) {
-    setFilter(value);
+  function changeFilter(value: FilterValuesType, todoListId: string) {
+   
   }
 
   function removeTask(id: string) {
@@ -52,10 +52,10 @@ function App() {
     <div className="App">
       {todoList.map((tl) => {
         let taskForTodoList = tasks;
-        if (filter === "completed") {
+        if (tl.filter === "completed") {
           taskForTodoList = tasks.filter((el) => el.isDone === true);
         }
-        if (filter === "active") {
+        if (tl.filter === "active") {
           taskForTodoList = tasks.filter((el) => el.isDone === false);
         }
 
