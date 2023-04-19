@@ -18,7 +18,6 @@ function App() {
     { id: v1(), title: "React", isDone: false },
     { id: v1(), title: "Redux", isDone: false },
   ]);
-  // let [filter, setFilter] = useState<FilterValuesType>("all");
 
   function changeFilter(value: FilterValuesType, todoListId: string) {
    
@@ -43,10 +42,10 @@ function App() {
     setTasks([...tasks]);
   }
 
-  let todoList: Array<TodoListType> = [
+  let [todoList, setTodoList] = useState([
     { id: v1(), title: "What to buy", filter: "active" },
     { id: v1(), title: "What to learn", filter: "completed" },
-  ];
+  ]);
 
   return (
     <div className="App">
