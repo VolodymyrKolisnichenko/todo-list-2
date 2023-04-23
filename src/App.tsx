@@ -14,9 +14,9 @@ function App() {
   let todoListId1 = v1();
   let todoListId2 = v1();
 
-  let [todoLists, setTodoList] = useState<Array<TodoListType>>([
-    { id: v1(), title: "What to buy", filter: "active" },
-    { id: v1(), title: "What to learn", filter: "completed" },
+  let [todoLists, setTodoLists] = useState<Array<TodoListType>>([
+    { id: todoListId1, title: "What to buy", filter: "active" },
+    { id: todoListId2, title: "What to learn", filter: "completed" },
   ]);
 
   let [tasksObj, setTasks] = useState({
@@ -31,16 +31,6 @@ function App() {
       { id: v1(), title: "Milk", isDone: true },
     ],
   })
-
-
-  function changeFilter(value: FilterValuesType, todoListId: string) {
-   let todoList = todoLists.find(el => el.id === todoListId)
-   if(todoList) {
-    todoList.filter = value
-    setTodoList([...todoLists])
-   }
-  }
-
   function removeTask(id: string, todoListId: string) {
     let tasks = tasksObj[todoListId];
     let filteredTasks = tasks.filter((t) => t.id !== id);
@@ -62,6 +52,14 @@ function App() {
       setTasks({...tasksObj});
     }
   }
+  function changeFilter(value: FilterValuesType, todoListId: string) {
+   let todoList = todoLists.find(el => el.id === todoListId)
+   if(todoList) {
+    todoList.filter = value
+    setTodoLists([...todoLists])
+   }
+  }
+
 
   return (
     <div className="App">
