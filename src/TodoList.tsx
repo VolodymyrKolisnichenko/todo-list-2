@@ -60,10 +60,8 @@ export function TodoList(props: PropsType) {
         {error && <div className="error-message">{error}</div>}
       </div>
       <ul>
-        {props.tasks.map(t => {
-          const onRemoveHandler = () => {
-            props.removeTask(t.id, props.id);
-          };
+        {props.tasks.map(t => 
+        {const onRemoveHandler = () => {props.removeTask(t.id, props.id)};
           const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) =>
             props.changeTaskStatus(t.id, e.currentTarget.checked, props.id);
 
