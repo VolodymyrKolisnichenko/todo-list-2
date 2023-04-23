@@ -59,6 +59,12 @@ function App() {
     setTodoLists([...todoLists])
    }
   }
+  function removeTodoList(todoListId: string) {
+    let filteredTodoList = todoLists.filter(t => t.id !== todoListId);
+    setTodoLists(filteredTodoList);
+    delete tasksObj[todoListId];
+    setTasks({...tasksObj})
+  }
 
 
   return (
@@ -83,6 +89,7 @@ function App() {
             changeTaskStatus={changeStatus}
             filter={tl.filter}
             id={tl.id}
+            removeTodoList={removeTodoList}
           />
         );
       })}
