@@ -60,21 +60,21 @@ export function TodoList(props: PropsType) {
         {error && <div className="error-message">{error}</div>}
       </div>
       <ul>
-        {props.tasks.map((el) => {
+        {props.tasks.map(t => {
           const onRemoveHandler = () => {
-            props.removeTask(el.id, props.id);
+            props.removeTask(t.id, props.id);
           };
           const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) =>
-            props.changeTaskStatus(el.id, e.currentTarget.checked, props.id);
+            props.changeTaskStatus(t.id, e.currentTarget.checked, props.id);
 
           return (
-            <li className={el.isDone === true? "is-done": ""} key={el.id}>
+            <li className={t.isDone === true? "is-done": ""} key={t.id}>
               <input
                 type="checkbox"
                 onChange={onChangeHandler}
-                checked={el.isDone}
+                checked={t.isDone}
               />
-              <span>{el.title}</span>
+              <span>{t.title}</span>
               <button onClick={onRemoveHandler}>X</button>
             </li>
           );
