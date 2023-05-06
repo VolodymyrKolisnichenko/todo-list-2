@@ -64,7 +64,7 @@ export function TodoList(props: PropsType) {
       </Button>
       </h2>
       
-      <div>
+      <div className="input-block">
       <Input 
           value={title}
           onChange={onNewTitleChangeHandler}
@@ -76,8 +76,11 @@ export function TodoList(props: PropsType) {
         <Fab size="small" color="success" aria-label="add" sx={{m: '5px'}}>
           <AddIcon onClick={addTask}/>
         </Fab>
-        {error && <div className="error-message">{error}</div>}
+       
       </div>
+           <div>
+              {error && <div className="error-message">{error}</div>}
+          </div>
       <ul>
         {props.tasks.map(t => {
           const onRemoveHandler = () => {props.removeTask(t.id, props.id)};
