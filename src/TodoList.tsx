@@ -1,12 +1,12 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import { FilterValuesType } from "./App";
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
+import Input from '@mui/joy/Input';
 
 export type TaskType = {
   id: string;
@@ -55,22 +55,25 @@ export function TodoList(props: PropsType) {
   const onCompletedClickHandler = () => props.changeFilter("completed", props.id);
   const removeTodoList = () => props.removeTodoList(props.id)
   return (
-    <div >
+    <div className="bg-card">
       <h2>
       {props.title}
-      <Button onClick={removeTodoList} size="small" variant="outlined" startIcon={<DeleteIcon />}>
+      <Button onClick={removeTodoList} size="small" sx={{ml: '15px'}}
+      variant="outlined" startIcon={<DeleteIcon />}>
         Delete
       </Button>
       </h2>
       
       <div>
-        <input
+      <Input 
           value={title}
           onChange={onNewTitleChangeHandler}
           onKeyDown={onKeyDownChangeHandler}
-          className={error? "error": ""}
-        />
-        <Fab size="small" color="success" aria-label="add">
+          className={error? "error": ""} 
+          placeholder="Add to your wishlist..." 
+          variant="outlined" color="primary" />
+      
+        <Fab size="small" color="success" aria-label="add" sx={{m: '5px'}}>
           <AddIcon onClick={addTask}/>
         </Fab>
         {error && <div className="error-message">{error}</div>}
