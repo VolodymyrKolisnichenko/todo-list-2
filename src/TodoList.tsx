@@ -1,5 +1,12 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import { FilterValuesType } from "./App";
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
 
 export type TaskType = {
   id: string;
@@ -48,8 +55,14 @@ export function TodoList(props: PropsType) {
   const onCompletedClickHandler = () => props.changeFilter("completed", props.id);
   const removeTodoList = () => props.removeTodoList(props.id)
   return (
-    <div>
-      <h3>{props.title}<button onClick={removeTodoList}>X</button></h3>
+    <div >
+      <h2>
+      {props.title}
+      <Button onClick={removeTodoList} size="small" variant="outlined" startIcon={<DeleteIcon />}>
+        Delete
+      </Button>
+      </h2>
+      
       <div>
         <input
           value={title}
@@ -57,7 +70,9 @@ export function TodoList(props: PropsType) {
           onKeyDown={onKeyDownChangeHandler}
           className={error? "error": ""}
         />
-        <button onClick={addTask}>+</button>
+        <Fab size="small" color="success" aria-label="add">
+          <AddIcon onClick={addTask}/>
+        </Fab>
         {error && <div className="error-message">{error}</div>}
       </div>
       <ul>
@@ -74,16 +89,20 @@ export function TodoList(props: PropsType) {
                 checked={t.isDone}
               />
               <span>{t.title}</span>
-              <button onClick={onRemoveHandler}>X</button>
+                <IconButton aria-label="delete" onClick={onRemoveHandler}>
+                    <DeleteIcon />
+                </IconButton>
             </li>
           );
         })}
       </ul>
 
       <div>
-        <button className={props.filter === "all"? "active-filter": ""} onClick={onAllClickHandler}>All</button>
-        <button className={props.filter === "active"? "active-filter": ""} onClick={onActiveClickHandler}>Active</button>
-        <button className={props.filter === "completed"? "active-filter": ""} onClick={onCompletedClickHandler}>Completed</button>
+      <ButtonGroup variant="outlined" aria-label="outlined button group">
+        <Button className={props.filter === "all"? "active-filter": ""} onClick={onAllClickHandler}>All</Button>
+        <Button className={props.filter === "active"? "active-filter": ""} onClick={onActiveClickHandler}>Active</Button>
+        <Button className={props.filter === "completed"? "active-filter": ""} onClick={onCompletedClickHandler}>Completed</Button>
+      </ButtonGroup>
       </div>
     </div>
   );
