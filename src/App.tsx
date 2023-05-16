@@ -25,6 +25,7 @@ function App() {
      { id: v1(), title: "CSS&HTML", isDone: true },
      { id: v1(), title: "JS", isDone: true },
      { id: v1(), title: "React", isDone: false },
+     { id: v1(), title: "Vue.js", isDone: false },
      { id: v1(), title: "Redux", isDone: false },
      { id: v1(), title: "TypeScript", isDone: false },
     ],
