@@ -2,7 +2,7 @@
   "name": "todo-list-2",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://myusername.github.io/my-app",
+  "homepage": "https://volodymyrkolisnichenko.github.io/todo-list-2",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
