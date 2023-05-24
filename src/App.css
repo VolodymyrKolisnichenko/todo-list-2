@@ -1,7 +1,11 @@
-
+body{
+  display: flex;
+  justify-content: center;
+}
 .App {
   padding: 30px;
   display: flex;
+  flex-wrap: wrap;
 }
 .App > div {
   margin-right: 50px;
@@ -36,9 +40,8 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(29, 121, 121, 0.3);;
+  border: 1px solid rgba(29, 121, 121, 0.3);
 
-  
   overflow-wrap: break-word;
   flex-wrap: wrap;
   min-width: 300px;
@@ -46,5 +49,10 @@
   border-radius: 10px;
   padding: 10px;
   position: relative;
+}
+@media (max-width: 960px) {
+  .App {
+    row-gap: 30px;
+  }
 }
 
