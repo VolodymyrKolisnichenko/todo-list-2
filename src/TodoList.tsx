@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, KeyboardEvent, useEffect } from "react";
+import { useState, ChangeEvent, KeyboardEvent} from "react";
 import { FilterValuesType } from "./App";
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
