@@ -45,6 +45,7 @@ body{
   overflow-wrap: break-word;
   flex-wrap: wrap;
   min-width: 300px;
+  max-width: 300px;
   height: min-content;
   border-radius: 10px;
   padding: 10px;
