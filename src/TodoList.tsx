@@ -1,12 +1,10 @@
-import { useState, ChangeEvent, KeyboardEvent } from "react";
+import {  ChangeEvent } from "react";
 import { FilterValuesType } from "./App";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
-import Input from "@mui/joy/Input";
+import  AddItemForm  from "./AddItemForm";
 
 export type TaskType = {
   id: string;
@@ -31,8 +29,6 @@ type PropsType = {
 };
 
 export function TodoList(props: PropsType) {
-  let [title, setTitle] = useState("");
- 
 
   const onAllClickHandler = () => props.changeFilter("all", props.id);
   const onActiveClickHandler = () => props.changeFilter("active", props.id);
@@ -108,46 +104,4 @@ export function TodoList(props: PropsType) {
 }
 
 
-type AddItemFormPropsType = {
-  addTask: (title: string, todoListId: string) => void
-  id: string
-};
 
-function AddItemForm(props: AddItemFormPropsType) {
-  let [title, setTitle] = useState("");
-  const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.currentTarget.value);
-  };
-  const addTask = () => {
-    if (title.trim() !== "") {
-      props.addTask(title.trim(), props.id);
-      setTitle("");
-    } else {
-      setError("Title is required");
-    }
-  };
-  const onKeyDownChangeHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-    setError(null);
-    if (e.key === "Enter") {
-      addTask();
-    }
-  };
-  let [error, setError] = useState<string | null>(null);
-
-
-  return  <div className="input-block">
-  <Input
-    value={title}
-    onChange={onNewTitleChangeHandler}
-    onKeyDown={onKeyDownChangeHandler}
-    className={error ? "error" : ""}
-    placeholder="Add to your wishlist..."
-    variant="outlined"
-    color="primary"
-  />
-
-  <Fab size="small" color="success" aria-label="add" sx={{ m: "5px" }}>
-    <AddIcon onClick={addTask} />
-  </Fab>
-</div>
-}
