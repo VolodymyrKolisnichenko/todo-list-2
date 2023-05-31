@@ -12,7 +12,7 @@ type EditableSpanPropsType = {
         editMode? setEditMode(false): setEditMode(true)
     }
     return editMode
-    ? <input value={props.title}></input>
+    ? <input value={props.title} onBlur={activateEditMode} autoFocus></input>
     : <span onDoubleClick={activateEditMode}>{props.title}</span>
   }
   export default EditableSpan
