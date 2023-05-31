@@ -5,6 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import  AddItemForm  from "./AddItemForm";
+import EditableSpan from "./EditableSpan"
 
 export type TaskType = {
   id: string;
@@ -72,7 +73,7 @@ export function TodoList(props: PropsType) {
                 onChange={onChangeHandler}
                 checked={t.isDone}
               />
-              <span>{t.title}</span>
+              <EditableSpan title={t.title} />
               <IconButton aria-label="delete" onClick={onRemoveHandler}>
                 <DeleteIcon />
               </IconButton>
@@ -106,6 +107,4 @@ export function TodoList(props: PropsType) {
     </div>
   );
 }
-
-
 
