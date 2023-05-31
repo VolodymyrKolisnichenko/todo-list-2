@@ -51,7 +51,7 @@ export function TodoList(props: PropsType) {
         </Button>
       </h2>
 
-     <AddItemForm id={props.id} addTask={props.addTask}/>
+     <AddItemForm id={props.id} addItem={props.addTask}/>
       <ul>
         {props.tasks.map((t) => {
           const onRemoveHandler = () => {
