@@ -2,6 +2,7 @@ import { useState, ChangeEvent, KeyboardEvent } from "react";
 import Input from "@mui/joy/Input";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
+import "./App.css";
 
 type AddItemFormPropsType = {
   addItem: (title: string) => void;
@@ -10,7 +11,7 @@ type AddItemFormPropsType = {
 const AddItemForm = (props: AddItemFormPropsType) => {
   let [title, setTitle] = useState("");
   let [error, setError] = useState<string | null>(null);
-  
+
   const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value);
   };
@@ -28,10 +29,13 @@ const AddItemForm = (props: AddItemFormPropsType) => {
       addTask();
     }
   };
-  
 
+  {
+    /* <div className="input-block">
+</div> */
+  }
   return (
-    <div className="input-block">
+    <div>
       <Input
         value={title}
         onChange={onNewTitleChangeHandler}

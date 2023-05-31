@@ -51,7 +51,7 @@ body{
   padding: 10px;
   position: relative;
 }
-@media (max-width: 960px) {
+@media (max-width: 1500px) {
   .App {
     row-gap: 30px;
   }
