@@ -75,7 +75,7 @@ function App() {
 
   return (
     <div className="App">
-      <AddItemForm addItem={() => {}} id={'sds'}/>
+      <AddItemForm addItem={(title: string) => {alert(title)}} />
       {todoLists.map((tl) => {
         let tasksForTodoList = tasksObj[tl.id];
         if (tl.filter === "completed") {

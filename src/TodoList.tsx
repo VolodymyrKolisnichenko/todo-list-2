@@ -36,6 +36,10 @@ export function TodoList(props: PropsType) {
     props.changeFilter("completed", props.id);
   const removeTodoList = () => props.removeTodoList(props.id);
 
+  const addTask = (title: string) => {
+    props.addTask (title, props.id)
+  }
+
   return (
     <div className="bg-card">
       <h2>
@@ -51,7 +55,7 @@ export function TodoList(props: PropsType) {
         </Button>
       </h2>
 
-     <AddItemForm id={props.id} addItem={props.addTask}/>
+     <AddItemForm  addItem={addTask}/>
       <ul>
         {props.tasks.map((t) => {
           const onRemoveHandler = () => {

@@ -4,8 +4,7 @@ import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 
 type AddItemFormPropsType = {
-  addItem: (title: string, todoListId: string) => void;
-  id: string;
+  addItem: (title: string) => void;
 };
 
 const AddItemForm = (props: AddItemFormPropsType) => {
@@ -17,7 +16,7 @@ const AddItemForm = (props: AddItemFormPropsType) => {
   };
   const addTask = () => {
     if (title.trim() !== "") {
-      props.addItem(title.trim(), props.id);
+      props.addItem(title.trim());
       setTitle("");
     } else {
       setError("Title is required");
