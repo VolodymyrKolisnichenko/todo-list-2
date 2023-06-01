@@ -40,8 +40,7 @@ export function TodoList(props: PropsType) {
 
   return (
     <div className="bg-card">
-      <h2>
-        {props.title}
+      <h2> <EditableSpan title={props.title} onChange={(value) => alert(value)} />
         <Button
           onClick={removeTodoList}
           size="small"
