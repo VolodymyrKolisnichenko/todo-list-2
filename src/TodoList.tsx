@@ -73,7 +73,7 @@ export function TodoList(props: PropsType) {
                 onChange={onChangeStatusHandler}
                 checked={t.isDone}
               />
-              <EditableSpan title={t.title} onChange={(value) => alert(value)} />
+              <EditableSpan title={t.title} onChange={onChangeTitleHandler} />
               <IconButton aria-label="delete" onClick={onRemoveHandler}>
                 <DeleteIcon />
               </IconButton>
