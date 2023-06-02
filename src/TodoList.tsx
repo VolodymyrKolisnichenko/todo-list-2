@@ -24,15 +24,16 @@ type PropsType = {
   filter: FilterValuesType;
   id: string;
   removeTodoList: (todoListId: string) => void;
+  changeTodoListTitle: (todoListId: string, newTitle: string) => void;
 };
 
 export function TodoList(props: PropsType) {
 
   const onAllClickHandler = () => props.changeFilter("all", props.id);
   const onActiveClickHandler = () => props.changeFilter("active", props.id);
-  const onCompletedClickHandler = () =>
-    props.changeFilter("completed", props.id);
+  const onCompletedClickHandler = () =>props.changeFilter("completed", props.id);
   const removeTodoList = () => props.removeTodoList(props.id);
+  const changeTodoListTitle = (newTitle: string) => props.changeTodoListTitle(props.id, newTitle);
 
   const addTask = (title: string) => {
     props.addTask (title, props.id)
@@ -40,7 +41,8 @@ export function TodoList(props: PropsType) {
 
   return (
     <div className="bg-card">
-      <h2> <EditableSpan title={props.title} onChange={(value) => alert(value)} />
+      <h2> <EditableSpan title={props.title} onChange={changeTodoListTitle} />
+      
         <Button
           onClick={removeTodoList}
           size="small"
@@ -64,7 +66,6 @@ export function TodoList(props: PropsType) {
           const onChangeTitleHandler = (newValue: string) => {
             props.changeTaskTitle(t.id, newValue, props.id);
           };
-
           return (
             <li className={t.isDone ? "is-done" : ""} key={t.id}>
               <input

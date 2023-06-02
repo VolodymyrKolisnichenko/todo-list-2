@@ -83,6 +83,16 @@ function App() {
     delete tasksObj[todoListId];
     setTasks({...tasksObj})
   }
+  function changeTodoListTitle(todoListId: string,  newTitle: string) {
+    let todoList = todoLists.find(el => el.id === todoListId)
+     if (todoList){
+      todoList.title = newTitle
+     }
+    // todoList.title = newTitle
+    // setTodoLists(todoList);
+    // delete tasksObj[todoListId];
+    // setTasks({...tasksObj})
+  }
 
 
   function addTodoList (title: string){
@@ -122,6 +132,7 @@ function App() {
             filter={tl.filter}
             id={tl.id}
             removeTodoList={removeTodoList}
+            changeTodoListTitle={changeTodoListTitle}
           />
         );
       })}
