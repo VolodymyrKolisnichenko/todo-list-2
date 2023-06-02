@@ -87,11 +87,11 @@ function App() {
     let todoList = todoLists.find(el => el.id === todoListId)
      if (todoList){
       todoList.title = newTitle
-     }
+      setTodoLists([...todoLists])
+    }
     // todoList.title = newTitle
     // setTodoLists(todoList);
     // delete tasksObj[todoListId];
-    // setTasks({...tasksObj})
   }
 
 
