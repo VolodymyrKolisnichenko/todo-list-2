@@ -31,11 +31,11 @@ Open index.html in your web browser to launch the application.
 <h2>Contributing</h2>
 Contributions are welcome! If you would like to contribute to the project, please follow these steps:
 
-<h3>Fork the repository.</h3>
-<h3>Create a new branch for your feature or bug fix.</h3>
-<h3>Make your modifications.</h3>
-<h3>Commit and push your changes.</h3>
-<h3>Submit a pull request explaining the changes you made.</h3>
+1.Fork the repository.
+2.Create a new branch for your feature or bug fix.
+3.Make your modifications.
+4.Commit and push your changes.
+5.Submit a pull request explaining the changes you made.
 
 <h2>License</h2>
 This project is licensed under the MIT License.
