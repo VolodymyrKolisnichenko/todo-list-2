@@ -6,16 +6,16 @@ This is a simple web application for managing your daily tasks and to-do lists. 
 A live demo of the web application can be accessed <span> <a href="https://volodymyrkolisnichenko.github.io/todo-list-2/" target="_blank"> here. </span>
 
 <h2>Features</h2>
-Create new tasks with a title and optional description.
-Mark tasks as completed to keep track of progress.
-Update existing tasks to modify their details.
-Delete tasks that are no longer needed.
-Responsive design for seamless usage across devices.
-Technologies Used
-HTML: Markup language for creating the structure and content of the web application.
-CSS: Stylesheets for defining the visual appearance and layout of the application.
-JavaScript: Programming language used for adding interactivity and functionality.
-Bootstrap: CSS library.
+Create new tasks with a title and optional description.<br>
+Mark tasks as completed to keep track of progress.<br>
+Update existing tasks to modify their details.<br>
+Delete tasks that are no longer needed.<br>
+Responsive design for seamless usage across devices.<br>
+<h2>Technologies Used</h2>
+HTML: Markup language for creating the structure and content of the web application.<br>
+CSS: Stylesheets for defining the visual appearance and layout of the application.<br>
+JavaScript: Programming language used for adding interactivity and functionality.<br>
+Bootstrap: Strong CSS library.<br>
 Other libraries or frameworks: The project may utilize additional libraries or frameworks to enhance the user experience and improve development efficiency. Refer to the project's source code for more details.
 <h2>Usage</h2>
 To use the web application locally, follow these steps:
@@ -24,7 +24,7 @@ To use the web application locally, follow these steps:
 git clone https://github.com/volodymyrkolisnichenko/todo-list-2.git
 
 <h3>Navigate to the project directory:</h3>
-cd todo-list-2
+cd todo-list-2 <br>
 
 Open index.html in your web browser to launch the application.
 
