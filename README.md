@@ -1,5 +1,5 @@
 <h2>Todo List Web Application</h2>
-<img src="./src/img/todo-list-Big.png" alt="iphone-14"/>
+<img src="./src/img/todo-list-Big.png" alt="todo-list"/>
 This is a simple web application for managing your daily tasks and to-do lists. It allows users to create, update, and delete tasks, as well as mark them as completed. The application provides an intuitive user interface and offers essential features for effective task management.
 
 Live Demo
