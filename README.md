@@ -37,9 +37,6 @@ Contributions are welcome! If you would like to contribute to the project, pleas
 4.Commit and push your changes.<br>
 5.Submit a pull request explaining the changes you made.<br>
 
-<h2>License</h2>
-This project is licensed under the MIT License.
-
 <h2>Acknowledgments</h2>
 This project was developed to simplify task management and increase productivity. Thank you to all the open-source contributors whose libraries and tools were used in this project.
 
