@@ -1,37 +1,46 @@
-body{
+body {
   display: flex;
   justify-content: center;
 }
+
 .App {
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
 }
+
 .App > div {
   margin-right: 50px;
 }
+
 .App h2 {
-  color: rgb(44, 44, 46)
+  color: rgb(44, 44, 46);
 }
+
 .App li {
   color: rgb(44, 44, 46);
 }
+
 .error {
   border: red 1px solid;
 }
+
 .error-message {
   color: red;
   padding-left: 15px;
 }
+
 .active-filter {
   background-color: rgb(180, 155, 109);
 }
-.is-done{
+
+.is-done {
   opacity: 0.5;
 }
-.input-block{
+
+.input-block {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
 .bg-card {
@@ -41,7 +50,6 @@ body{
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(29, 121, 121, 0.3);
-
   overflow-wrap: break-word;
   flex-wrap: wrap;
   min-width: 300px;
@@ -51,9 +59,24 @@ body{
   padding: 10px;
   position: relative;
 }
-@media (max-width: 960px) {
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
+
   .App {
-    row-gap: 30px;
+    padding: 10px;
+  }
+
+  .App > div {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .bg-card {
+    min-width: auto;
+    max-width: 100%;
   }
 }
-
