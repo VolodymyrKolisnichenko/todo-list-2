@@ -5,7 +5,7 @@ This is a simple web application for managing your daily tasks and to-do lists. 
 <h2>Live Demo</h2>
 A live demo of the web application can be accessed <span> <a href="https://volodymyrkolisnichenko.github.io/todo-list-2/" target="_blank"> here. </span>
 
-Features<h2></h2>
+<h2>Features</h2>
 Create new tasks with a title and optional description.
 Mark tasks as completed to keep track of progress.
 Update existing tasks to modify their details.
